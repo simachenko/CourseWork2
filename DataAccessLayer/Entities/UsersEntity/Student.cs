@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer
+namespace Entities.UsersEntity
 {
-    public class Class1
+    public class Student : User
     {
     }
 }
