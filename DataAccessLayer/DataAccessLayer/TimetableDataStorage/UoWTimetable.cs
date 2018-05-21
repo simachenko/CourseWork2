@@ -6,17 +6,30 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using DataAccessLayer.TimetableDataStorage.Repos;
 using Entities;
+using DataAccessLayer.NinjectKernel;
+using DataAccessLayer.TimetableDataStorage.NIjectConfig;
+using Ninject.Modules;
+using Ninject;
+
+
 namespace DataAccessLayer.TimetableDataStorage
 {
     public class UoWTimetable :IDisposable
     {
-        private DbTimetable db = new DbTimetable();
+        private DbTimetable db;
         private IRepository<Lesson> lessonRepository;
         private IRepository<Day> dayRepository;
         private IRepository<Week> weekRepository;
         private IRepository<Group> groupRepository;
-
+        //private StandardKernel standardKernel;
         private bool disposedValue = false; // Для определения избыточных вызовов
+
+        public UoWTimetable()
+        {
+            //standardKernel = new StandardKernel(new NinjectConfig());
+            NinjectContext.SeUp(new NinjectConfigTT());
+            db = NinjectContext.Get<DbTimetable>();
+        }
 
         public IRepository<Lesson> LessonRepository
         {
@@ -24,7 +37,8 @@ namespace DataAccessLayer.TimetableDataStorage
             {
                 if (lessonRepository == null)
                 {
-                    lessonRepository = new LessonRepository(db);
+
+                    lessonRepository = NinjectContext.Get<IRepository<Lesson>>();
                 }
                 return lessonRepository;
             }      
@@ -35,7 +49,7 @@ namespace DataAccessLayer.TimetableDataStorage
             get
             {
                 if (dayRepository == null)
-                    dayRepository = new DayRepository(db);
+                    dayRepository = NinjectContext.Get<IRepository<Day>>(); ;
                 return dayRepository;
             }
         }
@@ -44,7 +58,7 @@ namespace DataAccessLayer.TimetableDataStorage
             get
             {
                 if (weekRepository == null)
-                    weekRepository = new WeekRepository(db);
+                    weekRepository = NinjectContext.Get<IRepository<Week>>(); ;
                 return weekRepository;
             }
         }
@@ -53,7 +67,7 @@ namespace DataAccessLayer.TimetableDataStorage
             get
             {
                 if (GroupRepository == null)
-                    groupRepository = new GroupRepository(db);
+                    groupRepository = NinjectContext.Get<IRepository<Group>>(); ;
                 return groupRepository;
             }
         }

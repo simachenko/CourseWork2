@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.TimetableDataStorage.Repos
+namespace DataAccessLayer
 {
     public interface IRepository<TEntity> 
         where TEntity : Entities.Entity

@@ -10,7 +10,7 @@ namespace Entities
     {
         public int DayID { set; get; }
         public ICollection<Lesson> lesson { set; get; }
-        public int? WeekId { set; get; }
+        public int WeekId { set; get; }
         public Week week { set; get; }
     }
 }
