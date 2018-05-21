@@ -5,20 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 using Entities;
 using System.Data.Entity;
+using Entities.TimetableEntity;
+using Ninject;
 namespace DataAccessLayer.TimetableDataStorage.Repos
 {
      class DayRepository : IRepository<Day>
      {
-        private DbTimetable dbTables;
-
+        [Inject]
+        private DbTimetable dbTables = NinjectKernel.NinjectContext.Get<DbTimetable>();
+        [Inject]
         public DayRepository(DbTimetable dbTables)
         {
-            this.dbTables = dbTables;
+            //this.dbTables = NinjectKernel.NinjectContext.Get<DbTimetable>();
         }
 
         public void Create(Day item)
         {
-            dbTables.days.Add(item);
+            dbTables.Entry(item).State = EntityState.Added;
         }
 
         public Day Get(int Id)
@@ -38,7 +41,7 @@ namespace DataAccessLayer.TimetableDataStorage.Repos
 
         public void Remove(Day item)
         {
-            dbTables.days.Remove(item);
+            dbTables.Entry(item).State = EntityState.Deleted;
         }
 
         public void Remove(int Id)
@@ -54,5 +57,15 @@ namespace DataAccessLayer.TimetableDataStorage.Repos
         {
             dbTables.Entry(item).State = EntityState.Modified;
         }
+        public void SaveChanges()
+        {
+            dbTables.SaveChanges();
+        }
+        public void Dispose()
+        {
+            dbTables.Dispose();
+        }
+
+        
     }
 }

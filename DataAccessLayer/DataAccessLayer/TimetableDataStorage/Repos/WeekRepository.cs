@@ -5,15 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using Entities;
 using System.Data.Entity;
+using Entities.TimetableEntity;
+using Ninject;
+
 namespace DataAccessLayer.TimetableDataStorage.Repos
 {
      class WeekRepository : IRepository<Week>
-    {
-        private DbTimetable dbTables;
-
+    {   [Inject]
+        private DbTimetable dbTables = NinjectKernel.NinjectContext.Get<DbTimetable>();
+        [Inject]
         public WeekRepository(DbTimetable dbTables)
         {
-            this.dbTables = dbTables;
+            //this.dbTables = NinjectKernel.NinjectContext.Get<DbTimetable>();
         }
 
         public void Create(Week item)
@@ -53,6 +56,15 @@ namespace DataAccessLayer.TimetableDataStorage.Repos
         public void Update(Week item)
         {
             dbTables.Entry(item).State = EntityState.Modified;
+        }
+
+        public void SaveChanges()
+        {
+            dbTables.SaveChanges();
+        }
+        public void Dispose()
+        {
+            dbTables.Dispose();
         }
     }
 }

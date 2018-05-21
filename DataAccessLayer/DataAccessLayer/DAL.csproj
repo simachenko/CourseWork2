@@ -90,9 +90,9 @@
     <Compile Include="TimetableDataStorage\Repos\LessonRepository.cs" />
     <Compile Include="TimetableDataStorage\Repos\WeekRepository.cs" />
     <Compile Include="TimetableDataStorage\UoWTimetable.cs" />
-    <Compile Include="UsersDataStorage\Repository\AdminRepository.cs" />
-    <Compile Include="UsersDataStorage\Repository\StudentRepository.cs" />
-    <Compile Include="UsersDataStorage\Repository\TeacherRepository.cs" />
+    <Compile Include="UsersDataStorage\NInjectConfigs\NInjectCofigUser.cs" />
+    <Compile Include="UsersDataStorage\Repository\UserRepository.cs" />
+    <Compile Include="UsersDataStorage\UoWUsers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

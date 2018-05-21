@@ -16,6 +16,7 @@ namespace DataAccessLayer
         void Remove(TEntity item);
         void Remove(int Id);
         void Update(TEntity item);
-        
+        void SaveChanges();
+        void Dispose();       
     }
 }
