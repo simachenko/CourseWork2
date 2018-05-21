@@ -54,10 +54,6 @@
     <Compile Include="TimetableEntity\Group.cs" />
     <Compile Include="TimetableEntity\Lesson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TimetableEntity\Week.cs" />
-    <Compile Include="UsersEntity\Admin.cs" />
-    <Compile Include="UsersEntity\Student.cs" />
-    <Compile Include="UsersEntity\Teacher.cs" />
     <Compile Include="UsersEntity\User.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -55,8 +55,9 @@
     <Compile Include="TimetableDataStorage\Repos\DayRepository.cs" />
     <Compile Include="TimetableDataStorage\Repos\GroupRepository.cs" />
     <Compile Include="TimetableDataStorage\Repos\LessonRepository.cs" />
-    <Compile Include="TimetableDataStorage\Repos\WeekRepository.cs" />
     <Compile Include="TimetableDataStorage\UoWTimetable.cs" />
+    <Compile Include="UsersDataStorage\Repos\UserRepository.cs" />
+    <Compile Include="UsersDataStorage\UoWUsers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -70,7 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TimetableDataStorage\NIjectConfig\" />
-    <Folder Include="UsersDataStorage\Repository\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

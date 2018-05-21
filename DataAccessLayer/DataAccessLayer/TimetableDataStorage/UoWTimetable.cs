@@ -13,7 +13,7 @@ namespace DataAccessLayer.TimetableDataStorage
         private DbTimetable db = new DbTimetable();
         private IRepository<Lesson> lessonRepository;
         private IRepository<Day> dayRepository;
-        private IRepository<Week> weekRepository;
+       
         private IRepository<Group> groupRepository;
 
         private bool disposedValue = false; // Для определения избыточных вызовов
@@ -37,15 +37,6 @@ namespace DataAccessLayer.TimetableDataStorage
                 if (dayRepository == null)
                     dayRepository = new DayRepository(db);
                 return dayRepository;
-            }
-        }
-        public IRepository<Week> WeekRepository
-        {
-            get
-            {
-                if (weekRepository == null)
-                    weekRepository = new WeekRepository(db);
-                return weekRepository;
             }
         }
         public IRepository<Group> GroupRepository

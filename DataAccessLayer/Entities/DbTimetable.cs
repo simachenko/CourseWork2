@@ -18,8 +18,8 @@ namespace DataAccessLayer
         }
 
         public DbSet<Group> groups { set; get; }
-        public DbSet<Week> weeks { set; get; }
         public DbSet<Day> days { set; get; }
         public DbSet<Lesson> lessons { set; get; }
+        
     }
 }
