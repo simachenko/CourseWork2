@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    class Day
+    class Student
     {
-        int dayId { get; set; }
-        string dayName { get; }
+        string name { get; set; }
+        string surname { get; set; }
     }
 }

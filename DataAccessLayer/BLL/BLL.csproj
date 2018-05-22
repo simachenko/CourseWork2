@@ -42,6 +42,7 @@
     <Compile Include="Day.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="Lesson.cs" />
+    <Compile Include="Student.cs" />
     <Compile Include="Teacher.cs" />
     <Compile Include="Week.cs" />
     <Compile Include="WorkWithTimeteble.cs" />

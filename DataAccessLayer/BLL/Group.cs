@@ -8,6 +8,6 @@ namespace BLL
 {
     class Group
     {
-        string number;
+        string number { get; }
     }
 }
