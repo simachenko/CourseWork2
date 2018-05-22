@@ -5,17 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using Entities;
-namespace DataAccessLayer
+using Entities.TimetableEntity;
+
+namespace Entities
 {
     public class DbTimetable : DbContext
     {
         public DbTimetable(string nameOrConnectionString) : base(nameOrConnectionString)
         {
+            CreateDatabaseIfNotExists<DbTimetable> create = new CreateDatabaseIfNotExists<DbTimetable>();
+            create.InitializeDatabase(this);
         }
 
-        public DbTimetable()
-        {
-        }
+        
 
         public DbSet<Group> groups { set; get; }
         public DbSet<Week> weeks { set; get; }

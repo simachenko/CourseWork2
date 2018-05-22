@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities
+namespace Entities.TimetableEntity
 {
     public class Day : Entity
     {
         public int DayID { set; get; }
         public ICollection<Lesson> lesson { set; get; }
-        public int? WeekId { set; get; }
+        public int WeekId { set; get; }
         public Week week { set; get; }
     }
 }

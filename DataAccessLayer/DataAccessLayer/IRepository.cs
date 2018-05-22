@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.TimetableDataStorage.Repos
+namespace DataAccessLayer
 {
     public interface IRepository<TEntity> 
         where TEntity : Entities.Entity
@@ -16,6 +16,7 @@ namespace DataAccessLayer.TimetableDataStorage.Repos
         void Remove(TEntity item);
         void Remove(int Id);
         void Update(TEntity item);
-        
+        void SaveChanges();
+        void Dispose();       
     }
 }
