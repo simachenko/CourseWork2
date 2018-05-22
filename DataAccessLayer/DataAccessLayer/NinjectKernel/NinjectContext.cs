@@ -9,7 +9,7 @@ using DataAccessLayer.TimetableDataStorage.NIjectConfig;
 
 namespace DataAccessLayer.NinjectKernel
 {
-    static class NinjectContext
+    public static class NinjectContext
     {
         public static IKernel kernel;
         public static void SeUp(params INinjectModule[] configs)

@@ -5,17 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using Entities;
 using System.Data.Entity;
+using Entities.TimetableEntity;
+using Ninject;
 namespace DataAccessLayer.TimetableDataStorage.Repos
 {
      class LessonRepository : IRepository<Lesson>
     {
-        private DbTimetable DbTables;
+        [Inject]
+        private DbTimetable DbTables = NinjectKernel.NinjectContext.Get<DbTimetable>();
 
+        [Inject]
         public LessonRepository(DbTimetable DbTables)
         {
-            this.DbTables = DbTables;
+            //this.DbTables = NinjectKernel.NinjectContext.Get<DbTimetable>();
         }
-
         public void Create(Lesson item)
         {
             DbTables.lessons.Add(item);
@@ -54,6 +57,14 @@ namespace DataAccessLayer.TimetableDataStorage.Repos
         {
             DbTables.Entry(item).State = EntityState.Modified;
         }
-        
+
+        public void SaveChanges()
+        {
+            this.DbTables.SaveChanges();
+        }
+        public void Dispose()
+        {
+            DbTables.Dispose();
+        }
     }
 }

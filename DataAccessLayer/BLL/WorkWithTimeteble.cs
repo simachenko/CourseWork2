@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities.UsersEntity
+namespace BLL
 {
-    public class Admin : User
+    public class WorkWithTimeteble
     {
-        
+
     }
 }

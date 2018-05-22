@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities.UsersEntity
+namespace BLL
 {
-    public class Student : User
+    class Week
     {
+        int number;
     }
 }

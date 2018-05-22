@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.UsersDataStorage.Repository
+namespace BLL
 {
-    class AdminRepository
+    class Teacher
     {
+        string name;
+        string surname;
     }
 }
