@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL.DTO
 {
-    class WeekDTO
+    class LessonDTO
     {
     }
 }

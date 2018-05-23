@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Infrastructure
 {
-    public class ValidationException : Exception
+    class ValidationException
     {
-        public string Property { get; protected set; }
-        public ValidationException(string message, string prop) : base(message)
-        {
-            Property = prop;
-        }
     }
 }
-

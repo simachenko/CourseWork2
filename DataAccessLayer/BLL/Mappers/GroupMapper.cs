@@ -1,7 +1,4 @@
-﻿using AutoMapper;
-using BLL.DTO;
-using DAL.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,15 +8,5 @@ namespace BLL.Mappers
 {
     class GroupMapper
     {
-        public GroupMapper() { 
-            var config = new MapperConfiguration(cfg =>
-            {
-                cfg.CreateMap<Group, GroupDTO>();
-            });
-
-            IMapper mapper = config.CreateMapper();
-            var group = new Group();
-            var dest = mapper.Map<Group, GroupDTO>(group);
-        }
     }
 }

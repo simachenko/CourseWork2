@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL.Services
+namespace BLL.Core
 {
-    abstract class User
+    class Student
     {
-        abstract public string userKey { get; set; }
-
     }
 }
