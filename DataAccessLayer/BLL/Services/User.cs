@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL
+namespace BLL.Services
 {
-    class Lesson
+    abstract class User
     {
-        int number;
+        abstract public string userKey { get; set; }
+
     }
 }

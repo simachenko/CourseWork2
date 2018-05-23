@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL.Mapping
+namespace BLL.DTO
 {
-    class Mapper
+    class GroupDTO
     {
+        public int GroupId { set; get; }
+        public int name { set; get; }
     }
 }
