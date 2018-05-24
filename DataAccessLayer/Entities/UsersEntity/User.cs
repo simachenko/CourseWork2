@@ -8,7 +8,7 @@ namespace Entities.UsersEntity
 {
     public class User : Entity
     {
-        public int UserId { set; get;}
+        public int UserId { set; get; }
         public string name { set; get; }
         public string key { set; get; }
         public string surname { set; get; }

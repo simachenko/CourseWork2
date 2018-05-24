@@ -12,11 +12,10 @@ namespace DataAccessLayer.TimetableDataStorage.Repos
      class DayRepository : IRepository<Day>
      {
         [Inject]
-        private DbTimetable dbTables; /*= NinjectKernel.NinjectContext.Get<DbTimetable>();*/
+        private DbTimetable dbTables = NinjectKernel.NinjectContext.Get<DbTimetable>();
         [Inject]
         public DayRepository(DbTimetable dbTables)
         {
-            this.dbTables = dbTables;
             //this.dbTables = NinjectKernel.NinjectContext.Get<DbTimetable>();
         }
 
@@ -27,17 +26,17 @@ namespace DataAccessLayer.TimetableDataStorage.Repos
 
         public Day Get(int Id)
         {
-            return dbTables.Days.Find(Id);
+            return dbTables.days.Find(Id);
         }
 
         public IEnumerable<Day> Get()
         {
-            return dbTables.Days.ToList();
+            return dbTables.days.ToList();
         }
 
         public IEnumerable<Day> Get(Func<Day, bool> predicate)
         {
-            return dbTables.Days.AsNoTracking().Where(predicate).ToList();
+            return dbTables.days.AsNoTracking().Where(predicate).ToList();
         }
 
         public void Remove(Day item)
@@ -50,7 +49,7 @@ namespace DataAccessLayer.TimetableDataStorage.Repos
             Day day = Get(Id);
             if (day != null)
             {
-                dbTables.Days.Remove(day);
+                dbTables.days.Remove(day);
             }
         }
 

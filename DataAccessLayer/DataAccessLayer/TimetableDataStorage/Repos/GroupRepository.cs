@@ -12,37 +12,36 @@ namespace DataAccessLayer.TimetableDataStorage.Repos
      class GroupRepository : IRepository<Group>
       {
         [Inject]
-        private DbTimetable dbTables; /*= NinjectKernel.NinjectContext.Get<DbTimetable>();*/
+        private DbTimetable dbTables = NinjectKernel.NinjectContext.Get<DbTimetable>();
         [Inject]
         public GroupRepository(DbTimetable dbTables)
         {
-            this.dbTables = dbTables;
             //this.dbTables = NinjectKernel.NinjectContext.Get<DbTimetable>();
         }
 
         public void Create(Group item)
         {
-            dbTables.Groups.Add(item);
+            dbTables.groups.Add(item);
         }
 
         public Group Get(int Id)
         {
-            return dbTables.Groups.Find(Id);
+            return dbTables.groups.Find(Id);
         }
 
         public IEnumerable<Group> Get()
         {
-            return dbTables.Groups.AsNoTracking().ToList();
+            return dbTables.groups.AsNoTracking().ToList();
         }
 
         public IEnumerable<Group> Get(Func<Group, bool> predicate)
         {
-            return dbTables.Groups.AsNoTracking().Where(predicate).ToList();
+            return dbTables.groups.AsNoTracking().Where(predicate).ToList();
         }
 
         public void Remove(Group item)
         {
-            dbTables.Groups.Remove(item);
+            dbTables.groups.Remove(item);
         }
 
         public void Remove(int Id)

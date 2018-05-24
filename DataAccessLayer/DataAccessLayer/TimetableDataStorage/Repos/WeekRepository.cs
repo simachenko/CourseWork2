@@ -11,39 +11,37 @@ using Ninject;
 namespace DataAccessLayer.TimetableDataStorage.Repos
 {
      class WeekRepository : IRepository<Week>
-     {
-        [Inject]
-        private DbTimetable dbTables; /*= NinjectKernel.NinjectContext.Get<DbTimetable>();*/
+    {   [Inject]
+        private DbTimetable dbTables = NinjectKernel.NinjectContext.Get<DbTimetable>();
         [Inject]
         public WeekRepository(DbTimetable dbTables)
         {
-            this.dbTables = dbTables;
             //this.dbTables = NinjectKernel.NinjectContext.Get<DbTimetable>();
         }
 
         public void Create(Week item)
         {
-            dbTables.Weeks.Add(item);
+            dbTables.weeks.Add(item);
         }
 
         public Week Get(int Id)
         {
-            return dbTables.Weeks.Find(Id);
+            return dbTables.weeks.Find(Id);
         }
 
         public IEnumerable<Week> Get()
         {
-            return dbTables.Weeks.AsNoTracking().ToList();
+            return dbTables.weeks.AsNoTracking().ToList();
         }
 
         public IEnumerable<Week> Get(Func<Week, bool> predicate)
         {
-            return dbTables.Weeks.AsNoTracking().Where(predicate).ToList();
+            return dbTables.weeks.AsNoTracking().Where(predicate).ToList();
         }
 
         public void Remove(Week item)
         {
-            dbTables.Weeks.Remove(item);
+            dbTables.weeks.Remove(item);
         }
 
         public void Remove(int Id)
@@ -51,7 +49,7 @@ namespace DataAccessLayer.TimetableDataStorage.Repos
             Week week = Get(Id);
             if (week != null)
             {
-                dbTables.Weeks.Remove(week);
+                dbTables.weeks.Remove(week);
             }
         }
 

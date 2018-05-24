@@ -12,45 +12,44 @@ namespace DataAccessLayer.TimetableDataStorage.Repos
      class LessonRepository : IRepository<Lesson>
     {
         [Inject]
-        private DbTimetable DbTables; /*= NinjectKernel.NinjectContext.Get<DbTimetable>();*/
+        private DbTimetable DbTables = NinjectKernel.NinjectContext.Get<DbTimetable>();
 
         [Inject]
         public LessonRepository(DbTimetable DbTables)
         {
-            this.DbTables = DbTables;
             //this.DbTables = NinjectKernel.NinjectContext.Get<DbTimetable>();
         }
         public void Create(Lesson item)
         {
-            DbTables.Lessons.Add(item);
+            DbTables.lessons.Add(item);
         }
 
         public Lesson Get(int Id)
         {
-            return DbTables.Lessons.Find(Id);
+            return DbTables.lessons.Find(Id);
         }
 
         public IEnumerable<Lesson> Get()
         {
-            return DbTables.Lessons.ToList();
+            return DbTables.lessons.ToList();
         }
 
         public IEnumerable<Lesson> Get(Func<Lesson, bool> predicate)
         {
-            return DbTables.Lessons.AsNoTracking().Where(predicate).ToList();
+            return DbTables.lessons.AsNoTracking().Where(predicate).ToList();
         }
 
         public void Remove(Lesson item)
         {
-            DbTables.Lessons.Remove(item);
+            DbTables.lessons.Remove(item);
         }
 
         public void Remove(int Id)
         {
-            Lesson ent = DbTables.Lessons.Find(Id);
+            Lesson ent = DbTables.lessons.Find(Id);
             if (ent != null)
             {
-                DbTables.Lessons.Remove(ent);
+                DbTables.lessons.Remove(ent);
             }
         }
 
