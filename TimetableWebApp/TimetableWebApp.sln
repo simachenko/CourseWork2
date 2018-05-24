@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimetableWebApp", "TimetableWebApp\TimetableWebApp.csproj", "{84F873B2-C9D8-4657-816B-F39B9B7A9FAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "..\Timetable\BLL\BLL.csproj", "{023906CA-54D4-4D07-BB7E-84B91658AAFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84F873B2-C9D8-4657-816B-F39B9B7A9FAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84F873B2-C9D8-4657-816B-F39B9B7A9FAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84F873B2-C9D8-4657-816B-F39B9B7A9FAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84F873B2-C9D8-4657-816B-F39B9B7A9FAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{023906CA-54D4-4D07-BB7E-84B91658AAFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{023906CA-54D4-4D07-BB7E-84B91658AAFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{023906CA-54D4-4D07-BB7E-84B91658AAFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{023906CA-54D4-4D07-BB7E-84B91658AAFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D582842-B093-403C-82DD-EA3587584319}
+	EndGlobalSection
+EndGlobal
