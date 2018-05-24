@@ -16,28 +16,27 @@ namespace DataAccessLayer.TimetableDataStorage
 {
     public class UoWTimetable :IDisposable
     {
-        
-        private IRepository<Lesson> lessonRepository ;
-        private IRepository<Day> dayRepository ; 
+        private DbTimetable dbTimetable;  /* = NinjectContext.Get<DbTimetable>();*/
+        private IRepository<Lesson> lessonRepository;
+        private IRepository<Day> dayRepository; 
         private IRepository<Week> weekRepository;
-        private IRepository<Group> groupRepository ;
-        //private StandardKernel standardKernel;
+        private IRepository<Group> groupRepository;
         private bool disposedValue = false; // Для определения избыточных вызовов
 
         public UoWTimetable()
         {
-            //standardKernel = new StandardKernel(new NinjectConfig());
             NinjectContext.SeUp(new NinjectConfigTT());
-            lessonRepository = NinjectContext.Get<IRepository<Lesson>>();
-            dayRepository = NinjectContext.Get<IRepository<Day>>();
-            weekRepository = NinjectContext.Get<IRepository<Week>>();
-            groupRepository = NinjectContext.Get<IRepository<Group>>();
+            dbTimetable = NinjectContext.Get<DbTimetable>();
         }
 
         public IRepository<Lesson> LessonRepository
         {
             get
             {
+                if (lessonRepository == null)
+                {
+                    lessonRepository = NinjectContext.Get<IRepository<Lesson>>();
+                }
                 return lessonRepository;
             }      
         }
@@ -46,6 +45,10 @@ namespace DataAccessLayer.TimetableDataStorage
         {
             get
             {
+                if (dayRepository == null)
+                {
+                    dayRepository = NinjectContext.Get<IRepository<Day>>();
+                }
                 return dayRepository;
             }
         }
@@ -53,6 +56,10 @@ namespace DataAccessLayer.TimetableDataStorage
         {
             get
             {
+                if (weekRepository == null)
+                {
+                    weekRepository = NinjectContext.Get<IRepository<Week>>();
+                }
                 return weekRepository;
             }
         }
@@ -60,16 +67,21 @@ namespace DataAccessLayer.TimetableDataStorage
         {
             get
             {
+                if (groupRepository == null)
+                {
+                     groupRepository = NinjectContext.Get<IRepository<Group>>();
+                }
                 return groupRepository;
             }
         }
 
         public void Save()
         {
-            groupRepository.SaveChanges();
-            weekRepository.SaveChanges();
-            dayRepository.SaveChanges();
-            lessonRepository.SaveChanges();
+            /* groupRepository.SaveChanges();
+             weekRepository.SaveChanges();
+             dayRepository.SaveChanges();
+             lessonRepository.SaveChanges();*/
+            dbTimetable.SaveChanges();
         }
 
 
@@ -81,10 +93,11 @@ namespace DataAccessLayer.TimetableDataStorage
                 if (disposing)
                 {
                     // TODO: освободить управляемое состояние (управляемые объекты).
-                    lessonRepository.Dispose();
-                    dayRepository.Dispose();
-                    weekRepository.Dispose();
-                    groupRepository.Dispose();
+                    //lessonRepository.Dispose();
+                    //dayRepository.Dispose();
+                    //weekRepository.Dispose();
+                    //groupRepository.Dispose();
+                    dbTimetable.Dispose();
                 }
 
                 // TODO: освободить неуправляемые ресурсы (неуправляемые объекты) и переопределить ниже метод завершения.

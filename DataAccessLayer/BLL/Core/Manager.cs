@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL
+namespace BLL.Core
 {
-    public class WorkWithTimeteble
+    class Manager
     {
-
     }
 }

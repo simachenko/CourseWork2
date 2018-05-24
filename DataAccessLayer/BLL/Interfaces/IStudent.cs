@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL.Mapping
+namespace BLL.Interfaces
 {
-    class Mapper
+    interface IStudent
     {
     }
 }

@@ -8,14 +8,16 @@ using System.Threading.Tasks;
 
 namespace Entities.TimetableEntity
 {
-    [Table("Lessons")]
+    [Table("Day")]
     public class Day : Entity
     {
         [Key]
         public int DayID { set; get; }
         public string name { set; get; }
-        public int groupeID { set; get; }
-        public Group groupe { set; get; }
+        //[ForeignKey("Groupe")]
+        public int? WeekId { set; get; }
+        public Week week { set; get; }
+        //[ForeignKey("Lessons")]
         public ICollection<Lesson> lesson { set; get; }
         
     }

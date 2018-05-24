@@ -1,28 +1,15 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-=======
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
->>>>>>> 42b4bb09c00386930bb3e837282bea16848d6964
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-<<<<<<< HEAD
-    <ProjectGuid>278ee1f0-5811-4319-b781-261eefac3cfe</ProjectGuid>
-=======
-    <ProjectGuid>{11355595-3373-429F-ACDE-834D33030C4D}</ProjectGuid>
->>>>>>> 42b4bb09c00386930bb3e837282bea16848d6964
+    <ProjectGuid>023906ca-54d4-4d07-bb7e-84b91658aafd</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BLL</RootNamespace>
     <AssemblyName>BLL</AssemblyName>
-<<<<<<< HEAD
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-=======
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
->>>>>>> 42b4bb09c00386930bb3e837282bea16848d6964
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -43,7 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Reference Include="System"/>
     
     <Reference Include="System.Core"/>
@@ -61,24 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-=======
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Day.cs" />
-    <Compile Include="Group.cs" />
-    <Compile Include="Lesson.cs" />
-    <Compile Include="Student.cs" />
-    <Compile Include="Teacher.cs" />
-    <Compile Include="Week.cs" />
-    <Compile Include="WorkWithTimeteble.cs" />
->>>>>>> 42b4bb09c00386930bb3e837282bea16848d6964
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -89,9 +57,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-<<<<<<< HEAD
 
  </Project>
-=======
-</Project>
->>>>>>> 42b4bb09c00386930bb3e837282bea16848d6964

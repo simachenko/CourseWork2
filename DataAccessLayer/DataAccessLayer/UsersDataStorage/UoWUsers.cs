@@ -11,9 +11,14 @@ namespace DataAccessLayer.UsersDataStorage
     public class UoWUsers :IDisposable
     {
 
-        
-        private IRepository<User> userRepositiry;
 
+        private DbUsers dbUsers;
+        private IRepository<User> userRepositiry;
+        public UoWUsers()
+        {
+            NinjectKernel.NinjectContext.SeUp(new NInjectConfigs.NInjectCofigUser());
+            dbUsers = NinjectKernel.NinjectContext.Get<DbUsers>();
+        }
         public IRepository<User> userRepository
         {
             private set { }
@@ -29,16 +34,12 @@ namespace DataAccessLayer.UsersDataStorage
         
         public void Save()
         {
-            userRepositiry.SaveChanges();
+            dbUsers.SaveChanges();
         }
         #region IDisposable Support
         private bool disposedValue = false; // Для определения избыточных вызовов
 
-        public UoWUsers()
-        {
-            NinjectKernel.NinjectContext.SeUp(new NInjectConfigs.NInjectCofigUser());
-            
-        }
+        
 
         protected virtual void Dispose(bool disposing)
         {
@@ -47,6 +48,7 @@ namespace DataAccessLayer.UsersDataStorage
                 if (disposing)
                 {
                     // TODO: освободить управляемое состояние (управляемые объекты).
+                    dbUsers.Dispose();
                 }
 
                 // TODO: освободить неуправляемые ресурсы (неуправляемые объекты) и переопределить ниже метод завершения.

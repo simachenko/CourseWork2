@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL
+namespace BLL.Service
 {
-    class Lesson
+    class User
     {
-        int number;
     }
 }

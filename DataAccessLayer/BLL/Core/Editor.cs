@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL
+namespace BLL.Core
 {
-    class Day
+    class Editor
     {
-        int dayId { get; set; }
-        string dayName { get; }
     }
 }
