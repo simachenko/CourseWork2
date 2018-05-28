@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL.Core
+namespace BLL.User
 {
-    class Student
+    class Manager
     {
     }
 }

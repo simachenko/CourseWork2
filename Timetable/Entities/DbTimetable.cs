@@ -7,6 +7,7 @@ using System.Data.Entity;
 using Entities;
 using Entities.TimetableEntity;
 
+
 namespace Entities
 {
     public class DbTimetable : DbContext
