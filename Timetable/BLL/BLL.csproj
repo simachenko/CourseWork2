@@ -31,8 +31,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< HEAD:DataAccessLayer/BLL/BLL.csproj
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+=======
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+>>>>>>> 5e483fd79b545376760d485670d3d07fd20239eb:Timetable/BLL/BLL.csproj
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,16 +52,51 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Admin.cs" />
+<<<<<<< HEAD:DataAccessLayer/BLL/BLL.csproj
+    <Compile Include="Core\Editor.cs" />
+    <Compile Include="Core\Manager.cs" />
+    <Compile Include="Core\Student.cs" />
+    <Compile Include="Core\Teacher.cs" />
+    <Compile Include="DTO\WeekDTO.cs" />
+    <Compile Include="DTO\DayDTO.cs" />
+    <Compile Include="DTO\GroupDTO.cs" />
+    <Compile Include="DTO\UsersDTO.cs" />
+    <Compile Include="DTO\LessonDTO.cs" />
+    <Compile Include="Infrastructure\ValidationException.cs" />
+=======
     <Compile Include="DTO\DayDTO.cs" />
     <Compile Include="Mappers\DayMapper.cs" />
     <Compile Include="Core\Editor.cs" />
     <Compile Include="DTO\GroupDTO.cs" />
     <Compile Include="Mappers\GroupMapper.cs" />
+>>>>>>> 5e483fd79b545376760d485670d3d07fd20239eb:Timetable/BLL/BLL.csproj
     <Compile Include="Interfaces\IAdmin.cs" />
     <Compile Include="Interfaces\IEditor.cs" />
     <Compile Include="Interfaces\IManager.cs" />
     <Compile Include="Interfaces\IStudent.cs" />
     <Compile Include="Interfaces\ITeacher.cs" />
+<<<<<<< HEAD:DataAccessLayer/BLL/BLL.csproj
+    <Compile Include="Mappers\DayMapper.cs" />
+    <Compile Include="Mappers\GroupMapper.cs" />
+    <Compile Include="Mappers\LessonMapper.cs" />
+    <Compile Include="Mappers\UsersMapper.cs" />
+    <Compile Include="Mappers\WeekMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayer\DAL.csproj">
+      <Project>{adcb5529-a253-4a48-bd20-442ef0ca0a63}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entity.csproj">
+      <Project>{17b6ccdd-d61f-40bc-8925-b494972d1a89}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+=======
     <Compile Include="DTO\LessonDTO.cs" />
     <Compile Include="Mappers\LessonMapper.cs" />
     <Compile Include="Core\Manager.cs" />
@@ -64,6 +109,7 @@
     <Compile Include="Infrastructure\ValidationException.cs" />
     <Compile Include="DTO\WeekDTO.cs" />
     <Compile Include="Mappers\WeekMapper.cs" />
+>>>>>>> 5e483fd79b545376760d485670d3d07fd20239eb:Timetable/BLL/BLL.csproj
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
