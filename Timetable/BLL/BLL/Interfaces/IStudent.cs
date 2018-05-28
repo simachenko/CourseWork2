@@ -12,6 +12,6 @@ namespace BLL.Interfaces
         List<LessonDTO> getAllLessons(int group);
         LessonDTO getLesson(string dicpline, int group);
         List<LessonDTO> getLessons(string day, int group);
-
+        
     }
 }

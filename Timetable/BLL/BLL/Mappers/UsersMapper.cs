@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using BLL.DTO;
-using Entities.TimetableEntity;
+using DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 
 namespace BLL.Mappers
 {
-    class LessonMapper
+    class UsersMapper
     {
-        public LessonMapper()
+        public UsersMapper()
         {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<Lesson, LessonDTO>();
+                cfg.CreateMap<Users, UsersDTO>();
             });
 
             IMapper mapper = config.CreateMapper();
-            var day = new Lesson();
-            var dest = mapper.Map<Lesson, LessonDTO>(day);
+            var users = new Users();
+            var dest = mapper.Map<Users, UsersDTO>(users);
         }
     }
 }

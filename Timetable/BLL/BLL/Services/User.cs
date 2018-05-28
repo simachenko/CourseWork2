@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL.Service
+namespace BLL.Services
 {
-    class TimetableService
+    abstract class User
     {
-        
+        abstract public string userKey { get; set; }
+
     }
 }

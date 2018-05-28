@@ -1,15 +1,16 @@
 ﻿using AutoMapper;
 using BLL.DTO;
+using DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entities.TimetableEntity;
 
 namespace BLL.Mappers
 {
-    class DayMapper {
+    class DayMapper
+    {
         public DayMapper()
         {
             var config = new MapperConfiguration(cfg =>
@@ -21,5 +22,6 @@ namespace BLL.Mappers
             var day = new Day();
             var dest = mapper.Map<Day, DayDTO>(day);
         }
-    }
+
+    }       
 }

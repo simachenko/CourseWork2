@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{023906CA-54D4-4D07-BB7E-84B91658AAFD}</ProjectGuid>
+    <ProjectGuid>{E2647FE1-5DF5-431C-802D-33845D787624}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BLL</RootNamespace>
     <AssemblyName>BLL</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,104 +30,50 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Reference Include="Microsoft.CSharp" />
-=======
-<<<<<<< HEAD:DataAccessLayer/BLL/BLL.csproj
     <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
->>>>>>> a404ab01ff780ace9e68cb724b94cf163f07d3fa
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
-=======
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
->>>>>>> 5e483fd79b545376760d485670d3d07fd20239eb:Timetable/BLL/BLL.csproj
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="Core\Core.cs" />
-    <Compile Include="Service\TimetableService.cs" />
-    <Compile Include="User\Admin.cs" />
-=======
-    <Compile Include="Core\Admin.cs" />
-<<<<<<< HEAD:DataAccessLayer/BLL/BLL.csproj
-    <Compile Include="Core\Editor.cs" />
-    <Compile Include="Core\Manager.cs" />
-    <Compile Include="Core\Student.cs" />
-    <Compile Include="Core\Teacher.cs" />
-    <Compile Include="DTO\WeekDTO.cs" />
     <Compile Include="DTO\DayDTO.cs" />
     <Compile Include="DTO\GroupDTO.cs" />
-    <Compile Include="DTO\UsersDTO.cs" />
     <Compile Include="DTO\LessonDTO.cs" />
+    <Compile Include="DTO\WeekDTO.cs" />
     <Compile Include="Infrastructure\ValidationException.cs" />
-=======
->>>>>>> a404ab01ff780ace9e68cb724b94cf163f07d3fa
-    <Compile Include="DTO\DayDTO.cs" />
-    <Compile Include="Mappers\DayMapper.cs" />
-    <Compile Include="User\Editor.cs" />
-    <Compile Include="DTO\GroupDTO.cs" />
-    <Compile Include="Mappers\GroupMapper.cs" />
->>>>>>> 5e483fd79b545376760d485670d3d07fd20239eb:Timetable/BLL/BLL.csproj
     <Compile Include="Interfaces\IAdmin.cs" />
     <Compile Include="Interfaces\IEditor.cs" />
     <Compile Include="Interfaces\IManager.cs" />
     <Compile Include="Interfaces\IStudent.cs" />
     <Compile Include="Interfaces\ITeacher.cs" />
-<<<<<<< HEAD:DataAccessLayer/BLL/BLL.csproj
     <Compile Include="Mappers\DayMapper.cs" />
     <Compile Include="Mappers\GroupMapper.cs" />
     <Compile Include="Mappers\LessonMapper.cs" />
     <Compile Include="Mappers\UsersMapper.cs" />
     <Compile Include="Mappers\WeekMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\User.cs" />
+    <Compile Include="Services\User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{89355b56-8be6-450a-b8c9-93852c8d433e}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccessLayer\DAL.csproj">
-      <Project>{adcb5529-a253-4a48-bd20-442ef0ca0a63}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Entities\Entity.csproj">
-      <Project>{17b6ccdd-d61f-40bc-8925-b494972d1a89}</Project>
-      <Name>Entity</Name>
-    </ProjectReference>
-=======
-    <Compile Include="DTO\LessonDTO.cs" />
-    <Compile Include="Mappers\LessonMapper.cs" />
-    <Compile Include="User\Manager.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User\Student.cs" />
-    <Compile Include="User\Teacher.cs" />
-    <Compile Include="Service\User.cs" />
-    <Compile Include="DTO\UsersDTO.cs" />
-    <Compile Include="Mappers\UsersMapper.cs" />
-    <Compile Include="Infrastructure\ValidationException.cs" />
-    <Compile Include="DTO\WeekDTO.cs" />
-    <Compile Include="Mappers\WeekMapper.cs" />
->>>>>>> 5e483fd79b545376760d485670d3d07fd20239eb:Timetable/BLL/BLL.csproj
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DataAccessLayer\DAL.csproj">
-      <Project>{adcb5529-a253-4a48-bd20-442ef0ca0a63}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
+    <Folder Include="Core\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
