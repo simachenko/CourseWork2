@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace BLL.DTO
 {
-    class LessonDTO
+    class GroupDTO
     {
+        public int GroupId { set; get; }
+        public string name { set; get; }
+        public ICollection<WeekDTO> weeks { set; get; }
     }
 }
