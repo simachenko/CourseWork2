@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL.DTO
+namespace BLL.Interfaces
 {
-    public class UersDTO
+    interface IStudent
     {
-        
     }
 }
