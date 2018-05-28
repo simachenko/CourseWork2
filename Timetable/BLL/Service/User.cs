@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace BLL.Service
 {
-    class User
+    abstract class User
     {
+        abstract public string userKey { get; set; }
+
     }
 }

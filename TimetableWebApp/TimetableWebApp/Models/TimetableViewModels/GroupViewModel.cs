@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace BLL.DTO
+namespace TimetableWebApp.Models.TimetableViewModels
 {
-    public class GroupDTO
+    public class GroupViewModel
     {
         public int GroupId { set; get; }
         public string name { set; get; }
-        public ICollection<WeekDTO> weeks { set; get; }
+        public ICollection<WeekViewModel> weeks { set; get; }
     }
 }
