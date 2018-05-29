@@ -12,8 +12,8 @@ namespace BLL.Interfaces
     {
         bool addNewUser();
         bool removeUser(string surname);
-        List<UsersDTO> getAllUsers();
-        UsersDTO getUser(string surname);
+        List<UserDTO> getAllUsers();
+        UserDTO getUser(string surname);
 
     }
 }

@@ -9,9 +9,9 @@ namespace BLL.Interfaces
 {
     interface IManager
     {
-        List<UsersDTO> getAllLessons();
-        List<UsersDTO> getAuditoryLessons(double auditory);
-        List<UsersDTO> getTeacherLessons(string surname);
-        List<UsersDTO> getGroupLessons(int group);
+        List<UserDTO> getAllLessons();
+        List<UserDTO> getAuditoryLessons(double auditory);
+        List<UserDTO> getTeacherLessons(string surname);
+        List<UserDTO> getGroupLessons(int group);
     }
 }

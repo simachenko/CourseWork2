@@ -10,6 +10,5 @@ namespace BLL.DTO
     {
         public int GroupId { set; get; }
         public string name { set; get; }
-        public ICollection<WeekDTO> weeks { set; get; }
     }
 }

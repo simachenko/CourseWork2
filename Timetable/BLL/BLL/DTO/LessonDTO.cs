@@ -12,7 +12,7 @@ namespace BLL.DTO
         public string discipline { set; get; }
         public string teacher { set; get; }
         public double auditory { set; get; }
-        public int? DayId { set; get; }
-        public DayDTO day { set; get; }
+        public string group { set; get; }
+        public int day { set; get; }
     }
 }
