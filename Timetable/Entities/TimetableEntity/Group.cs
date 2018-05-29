@@ -14,6 +14,6 @@ namespace Entities.TimetableEntity
         public int GroupId { set; get; }
         public string name { set; get; }
         //[ForeignKey("Week")]
-        public ICollection<Week> weeks { set; get;}
+        //public ICollection<Week> weeks { set; get;}
     }
 }

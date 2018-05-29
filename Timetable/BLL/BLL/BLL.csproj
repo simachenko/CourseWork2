@@ -45,28 +45,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTO\DayDTO.cs" />
     <Compile Include="DTO\GroupDTO.cs" />
     <Compile Include="DTO\LessonDTO.cs" />
-    <Compile Include="DTO\WeekDTO.cs" />
+    <Compile Include="DTO\UserDTO.cs" />
     <Compile Include="Infrastructure\ValidationException.cs" />
     <Compile Include="Interfaces\IAdmin.cs" />
     <Compile Include="Interfaces\IEditor.cs" />
     <Compile Include="Interfaces\IManager.cs" />
     <Compile Include="Interfaces\IStudent.cs" />
     <Compile Include="Interfaces\ITeacher.cs" />
-    <Compile Include="Mappers\DayMapper.cs" />
     <Compile Include="Mappers\GroupMapper.cs" />
     <Compile Include="Mappers\LessonMapper.cs" />
-    <Compile Include="Mappers\UsersMapper.cs" />
-    <Compile Include="Mappers\WeekMapper.cs" />
+    <Compile Include="Mappers\UserMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\User.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{89355b56-8be6-450a-b8c9-93852c8d433e}</Project>
+    <ProjectReference Include="..\..\DataAccessLayer\DAL.csproj">
+      <Project>{adcb5529-a253-4a48-bd20-442ef0ca0a63}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Entities\Entity.csproj">
+      <Project>{17b6ccdd-d61f-40bc-8925-b494972d1a89}</Project>
+      <Name>Entity</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

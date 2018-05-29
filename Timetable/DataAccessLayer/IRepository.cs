@@ -11,8 +11,8 @@ namespace DataAccessLayer
     {
         TEntity Get(int Id);
         void Create(TEntity item);
-        IEnumerable<TEntity> Get();
-        IEnumerable<TEntity> Get(Func<TEntity, bool> predicate);
+        ICollection<TEntity> Get();
+        ICollection<TEntity> Get(Func<TEntity, bool> predicate);
         void Remove(TEntity item);
         void Remove(int Id);
         void Update(TEntity item);

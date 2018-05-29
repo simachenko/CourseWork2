@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using BLL.DTO;
-using DAL.Entities;
+using Entities.TimetableEntity;
 using System;
 using System.Collections.Generic;
 using System.Linq;

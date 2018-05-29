@@ -17,8 +17,8 @@ namespace DataAccessLayer.TimetableDataStorage.NIjectConfig
         {
             Bind<DbTimetable>().ToSelf().InSingletonScope().WithConstructorArgument("DbTimetable");
             Bind<IRepository<Lesson>>().To<LessonRepository>();
-            Bind<IRepository<Day>>().To<DayRepository>();
-            Bind<IRepository<Week>>().To<WeekRepository>();
+            //Bind<IRepository<Day>>().To<DayRepository>();
+            //Bind<IRepository<Week>>().To<WeekRepository>();
             Bind<IRepository<Group>>().To<GroupRepository>();
             
         }

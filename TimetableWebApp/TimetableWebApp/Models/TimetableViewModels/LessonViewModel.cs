@@ -11,7 +11,6 @@ namespace TimetableWebApp.Models.TimetableViewModels
         public string discipline { set; get; }
         public string teacher { set; get; }
         public double auditory { set; get; }
-        public int? DayId { set; get; }
-        public DayViewModel day { set; get; }
+       
     }
 }

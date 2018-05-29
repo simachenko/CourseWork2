@@ -30,12 +30,12 @@ namespace DataAccessLayer.TimetableDataStorage.Repos
             return dbTables.Groups.Find(Id);
         }
 
-        public IEnumerable<Group> Get()
+        public ICollection<Group> Get()
         {
             return dbTables.Groups.AsNoTracking().ToList();
         }
 
-        public IEnumerable<Group> Get(Func<Group, bool> predicate)
+        public ICollection<Group> Get(Func<Group, bool> predicate)
         {
             return dbTables.Groups.AsNoTracking().Where(predicate).ToList();
         }

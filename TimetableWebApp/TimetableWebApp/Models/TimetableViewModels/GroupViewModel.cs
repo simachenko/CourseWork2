@@ -9,6 +9,5 @@ namespace TimetableWebApp.Models.TimetableViewModels
     {
         public int GroupId { set; get; }
         public string name { set; get; }
-        public ICollection<WeekViewModel> weeks { set; get; }
     }
 }

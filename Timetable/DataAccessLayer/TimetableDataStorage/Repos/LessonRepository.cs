@@ -30,12 +30,12 @@ namespace DataAccessLayer.TimetableDataStorage.Repos
             return DbTables.Lessons.Find(Id);
         }
 
-        public IEnumerable<Lesson> Get()
+        public ICollection<Lesson> Get()
         {
             return DbTables.Lessons.ToList();
         }
 
-        public IEnumerable<Lesson> Get(Func<Lesson, bool> predicate)
+        public ICollection<Lesson> Get(Func<Lesson, bool> predicate)
         {
             return DbTables.Lessons.AsNoTracking().Where(predicate).ToList();
         }

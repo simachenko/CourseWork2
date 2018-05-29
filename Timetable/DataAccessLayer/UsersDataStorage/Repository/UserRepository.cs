@@ -26,12 +26,12 @@ namespace DataAccessLayer.UsersDataStorage.Repository
             return dbUsers.users.Find(Id);
         }
 
-        public IEnumerable<User> Get()
+        public ICollection<User> Get()
         {
             return dbUsers.users.ToList();
         }
 
-        public IEnumerable<User> Get(Func<User, bool> predicate)
+        public ICollection<User> Get(Func<User, bool> predicate)
         {
             return dbUsers.users.Where(predicate).ToList();
         }

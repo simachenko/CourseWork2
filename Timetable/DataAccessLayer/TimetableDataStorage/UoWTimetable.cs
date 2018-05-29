@@ -18,8 +18,8 @@ namespace DataAccessLayer.TimetableDataStorage
     {
         private DbTimetable dbTimetable;  /* = NinjectContext.Get<DbTimetable>();*/
         private IRepository<Lesson> lessonRepository;
-        private IRepository<Day> dayRepository; 
-        private IRepository<Week> weekRepository;
+        //private IRepository<Day> dayRepository; 
+        //private IRepository<Week> weekRepository;
         private IRepository<Group> groupRepository;
         private bool disposedValue = false; // Для определения избыточных вызовов
 
@@ -41,28 +41,28 @@ namespace DataAccessLayer.TimetableDataStorage
             }      
         }
 
-        public IRepository<Day> DayRepository
-        {
-            get
-            {
-                if (dayRepository == null)
-                {
-                    dayRepository = NinjectContext.Get<IRepository<Day>>();
-                }
-                return dayRepository;
-            }
-        }
-        public IRepository<Week> WeekRepository
-        {
-            get
-            {
-                if (weekRepository == null)
-                {
-                    weekRepository = NinjectContext.Get<IRepository<Week>>();
-                }
-                return weekRepository;
-            }
-        }
+        //public IRepository<Day> DayRepository
+        //{
+        //    get
+        //    {
+        //        if (dayRepository == null)
+        //        {
+        //            dayRepository = NinjectContext.Get<IRepository<Day>>();
+        //        }
+        //        return dayRepository;
+        //    }
+        //}
+        //public IRepository<Week> WeekRepository
+        //{
+        //    get
+        //    {
+        //        if (weekRepository == null)
+        //        {
+        //            weekRepository = NinjectContext.Get<IRepository<Week>>();
+        //        }
+        //        return weekRepository;
+        //    }
+        //}
         public IRepository<Group> GroupRepository
         {
             get

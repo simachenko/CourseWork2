@@ -10,13 +10,16 @@ namespace Entities.TimetableEntity
     [Table("Lesson")]
     public class Lesson : Entity
     {
+
         [Key]
         public int LessonId { set; get; }
         public string discipline { set; get; }
         public string teacher { set; get; }
         public double auditory { set; get; }
+        public string group { set; get; }
+        public int day { set; get; }
         //[ForeignKey("Day")]
-        public int? DayId { set; get; }
-        public Day day { set; get; }
+        //public int? DayId { set; get; }
+        //public Day day { set; get; }
     }
 }

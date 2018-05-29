@@ -180,17 +180,18 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LessonController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Core\DomainPresentation.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="ModelMapper\MapperConfigs\TimetableMapperConfigs.cs" />
-    <Compile Include="ModelMapper\ModelInitializer.cs" />
-    <Compile Include="Models\TimetableViewModels\DayViewModel.cs" />
+    <Compile Include="ModelMapper\ModelMap.cs" />
     <Compile Include="Models\TimetableViewModels\GroupViewModel.cs" />
     <Compile Include="Models\TimetableViewModels\LessonViewModel.cs" />
-    <Compile Include="Models\TimetableViewModels\WeekViewModel.cs" />
+    <Compile Include="Models\UserViewModels\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -247,7 +248,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\UserViewModel\" />
+    <Folder Include="ModelMapper\MapperConfigs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -263,8 +264,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Timetable\BLL\BLL.csproj">
-      <Project>{023906ca-54d4-4d07-bb7e-84b91658aafd}</Project>
+    <ProjectReference Include="..\..\Timetable\BLL\BLL\BLL.csproj">
+      <Project>{e2647fe1-5df5-431c-802d-33845d787624}</Project>
       <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>

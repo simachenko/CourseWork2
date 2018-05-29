@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
 using BLL.DTO;
-using DAL.Entities;
+using Entities.TimetableEntity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Entities.UsersEntity;
 namespace BLL.Mappers
 {
     class GroupMapper
@@ -20,6 +20,7 @@ namespace BLL.Mappers
             IMapper mapper = config.CreateMapper();
             var group = new Group();
             var dest = mapper.Map<Group, GroupDTO>(group);
+            User user = new User();
         }
     }
 }
