@@ -9,8 +9,7 @@ namespace BLL.Interfaces
 {
     interface ITeacher
     {
-        List<LessonDTO> getAllLessons(string surname);
-        LessonDTO getLesson(string dicpline, string surname);
-        List<LessonDTO> getLessons(string day, string surname);
+        List<LessonDTO> getLessonsByTeacher(string teacher);
+        List<LessonDTO> getLessonsByGroup(string group);
     }
 }

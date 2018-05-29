@@ -33,12 +33,15 @@ namespace BLL.Core
             tt.Save();
         }
 
-        public void DeleteGroup(string name)
+        public bool DeleteGroup(string name)
         {
             GroupDTO delete = groups.Where(p => p.name == name).First();
+            if (delete == null)
+                return false;
             groups.Remove(delete);
             tt.GroupRepository.Remove(Mappers.ModelMapper.GroupMapper_toEntity(delete));
             tt.Save();
+            return true;
         }
 
         public void CreateLesson(LessonDTO lesson)
@@ -48,7 +51,51 @@ namespace BLL.Core
             tt.Save();
         }
 
+        public bool DeleteLesson(int id)
+        {
+            LessonDTO delete = lessons.Where(p => p.LessonId == id).First();
+            if (delete == null)
+                return false;
+            lessons.Remove(delete);
+            tt.LessonRepository.Remove(Mappers.ModelMapper.LessonMapper_toEntity(delete));
+            tt.Save();
+            return true;
+        }
 
+        public List<LessonDTO> GetLessonByGroup(string group)
+        {
+            return new List<LessonDTO>(lessons.Where(p => p.group == group));
+        }
+
+        public List<LessonDTO> GetLessonByTeacher(string teacher)
+        {
+            return new List<LessonDTO>(lessons.Where(p => p.teacher == teacher));
+        }
+
+        public List<LessonDTO> GetLessonByAuditory(double auditory)
+        {
+            return new List<LessonDTO>(lessons.Where(p => p.auditory == auditory));
+        }
+
+        public List<LessonDTO> GetLessonByDiscipline(string discipline)
+        {
+            return new List<LessonDTO>(lessons.Where(p => p.discipline == discipline));
+        }
+
+        public LessonDTO getLesson(int id)
+        {
+            return lessons.Find(p => p.LessonId == id);
+        }
+
+        public List<GroupDTO> getGroups()
+        {
+            return groups;
+        }
+
+        public GroupDTO getGroup(string group)
+        {
+            return groups.Find(p => p.name == group);
+        }
 
     }
 }

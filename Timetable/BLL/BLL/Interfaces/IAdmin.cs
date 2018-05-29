@@ -10,8 +10,8 @@ namespace BLL.Interfaces
 {
     interface IAdmin
     {
-        bool addNewUser();
-        bool removeUser(string surname);
+        bool addNewUser(UserDTO user);
+        bool removeUser(int id);
         List<UserDTO> getAllUsers();
         UserDTO getUser(string surname);
 

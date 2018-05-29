@@ -9,9 +9,13 @@ namespace BLL.Interfaces
 {
     interface IEditor
     {
-        bool addNewLesson();
-        bool removeLesson(string dicpline);
-        List<LessonDTO> getAllLessons();
-        LessonDTO getLesson(string dicpline);
+        void addNewGroup(GroupDTO group);
+        bool removeGroup(string group);
+        void addNewLesson(LessonDTO lesson);
+        bool removeLesson(int id);
+        List<LessonDTO> getAllLessons(string group);
+        LessonDTO getLesson(int id);
+        List<GroupDTO> getAllGroups();
+        GroupDTO getGroup(string group);
     }
 }

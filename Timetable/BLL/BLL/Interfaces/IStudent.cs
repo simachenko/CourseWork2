@@ -9,9 +9,6 @@ namespace BLL.Interfaces
 {
     interface IStudent
     {
-        List<LessonDTO> getAllLessons(int group);
-        LessonDTO getLesson(string dicpline, int group);
-        List<LessonDTO> getLessons(string day, int group);
-        
+        List<LessonDTO> getAllLessons(string group);
     }
 }

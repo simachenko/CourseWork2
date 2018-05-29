@@ -21,32 +21,58 @@ namespace BLL.Core
             else users = Mappers.ModelMapper.UsersCollectionMapper_toBLL(us.userRepository.Get());
         }
 
-        public void CreateUser(UserDTO user)
+        public bool CreateUser(UserDTO user)
         {
+            foreach (UserDTO u in users)
+            {
+                if (u.nickname == user.nickname)
+                    return false;
+            }
             users.Add(user);
             us.userRepository.Create(Mappers.ModelMapper.UserMapper_toEntity(user));
             us.Save();
+            return true;
         }
 
-        public void DeleteUser(int id)
+        public bool DeleteUser(int id)
         {
             UserDTO delete = users.Where(p => p.UserId == id).First();
+            if (delete == null)
+                return false;
             users.Remove(delete);
             us.userRepository.Remove(Mappers.ModelMapper.UserMapper_toEntity(delete));
             us.Save();
+            return true;
         }
 
-        public bool Authorization(string login, string password)
+        public UserDTO Authorization(string login, string password)
         {
-            bool flag = false;
             foreach(UserDTO u in users)
             {
                 if (u.nickname == login && u.password == password)
-                    return true;
-                else return false;
+                    return u;
+                else
+                    return null;
             }
-            return flag;
+            return null;
         }
+
+        public UserDTO GetUser(int id)
+        {
+            return users.Find(p => p.UserId == id);
+        }
+
+        public UserDTO GetUser(string surname)
+        {
+            return users.Find(p => p.surname == surname);
+        }
+
+        public List<UserDTO> GetAllUser()
+        {
+            return users;
+        }
+
+
 
     }
 }
