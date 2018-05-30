@@ -5,17 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using BLL.DTO;
 using DataAccessLayer.UsersDataStorage;
-
+using Ninject;
 namespace BLL.Core
 {
     class CoreUser
     {
         List<UserDTO> users;
-
+        [Inject]
         UoWUsers us = new UoWUsers();
-
-        public CoreUser()
+        [Inject]
+        public CoreUser(UoWUsers usr)
         {
+            us = usr;
             if (us.userRepository.Get() == null)
                 users = new List<UserDTO>();
             else users = Mappers.ModelMapper.UsersCollectionMapper_toBLL(us.userRepository.Get());
