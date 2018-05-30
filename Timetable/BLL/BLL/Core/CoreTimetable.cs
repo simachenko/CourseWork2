@@ -5,18 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer.TimetableDataStorage;
 using BLL.DTO;
-
+using Ninject;
 namespace BLL.Core
 {
     public class CoreTimetable
     {
         List<GroupDTO> groups;
         List<LessonDTO> lessons;
-
-        UoWTimetable tt = new UoWTimetable();
-        
-        public CoreTimetable()
+        [Inject]
+        UoWTimetable tt;
+        [Inject]
+        public CoreTimetable(UoWTimetable table)
         {
+            tt = table;
             if (tt.GroupRepository.Get() == null)
                 groups = new List<GroupDTO>();
             else groups = Mappers.ModelMapper.GroupCollectionMapper_toBLL(tt.GroupRepository.Get());

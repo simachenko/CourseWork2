@@ -5,16 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 using BLL.Interfaces;
 using BLL.Core;
-
+using DataAccessLayer.NinjectKernel;
 namespace BLL.Users
 {
     public class UserImplementation : IAdmin, IEditor, IManager, IStudent, ITeacher
     {
-        CoreTimetable ct = new CoreTimetable();
-        CoreUser cu = new CoreUser();
+        CoreTimetable ct;
+        CoreUser cu;
 
+        public UserImplementation()
+        {
+            NinjectContext.SeUp(new NinjectConfig.NinjectConfigurations());
+            ct = NinjectContext.Get<CoreTimetable>();
+            cu = NinjectContext.Get<CoreUser>();
+        }
         public bool addNewUser(DTO.UserDTO user)
         {
+
             return cu.CreateUser(user);
         }
 
