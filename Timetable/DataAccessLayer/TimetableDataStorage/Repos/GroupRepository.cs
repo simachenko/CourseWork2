@@ -11,6 +11,7 @@ namespace DataAccessLayer.TimetableDataStorage.Repos
 {
      class GroupRepository : IRepository<Group>
       {
+        
         [Inject]
         private DbTimetable dbTables; /*= NinjectKernel.NinjectContext.Get<DbTimetable>();*/
         [Inject]
@@ -18,6 +19,7 @@ namespace DataAccessLayer.TimetableDataStorage.Repos
         {
             this.dbTables = dbTables;
             //this.dbTables = NinjectKernel.NinjectContext.Get<DbTimetable>();
+            var ensureDLLIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
         }
 
         public void Create(Group item)
