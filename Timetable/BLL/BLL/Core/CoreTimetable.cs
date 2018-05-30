@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,6 @@ namespace BLL.Core
         public CoreTimetable(UoWTimetable table)
         {
             tt = table;
-            //Mappers.MapperConfigInitialize.Initialize();
             if (tt.GroupRepository.Get() == null)
                 groups = new List<GroupDTO>();
             else groups = Mappers.ModelMapper.GroupCollectionMapper_toBLL(tt.GroupRepository.Get());
