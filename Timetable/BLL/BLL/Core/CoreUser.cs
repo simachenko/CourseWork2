@@ -8,7 +8,7 @@ using DataAccessLayer.UsersDataStorage;
 
 namespace BLL.Core
 {
-    public class CoreUser
+    class CoreUser
     {
         List<UserDTO> users;
 

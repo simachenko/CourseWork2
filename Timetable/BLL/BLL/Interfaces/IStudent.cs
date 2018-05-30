@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Interfaces
 {
-    interface IStudent
+    public interface IStudent
     {
         List<LessonDTO> getAllLessons(string group);
     }

@@ -8,12 +8,12 @@ using BLL.DTO;
 
 namespace BLL.Core
 {
-    public class CoreTimetable
+    class CoreTimetable
     {
-        List<GroupDTO> groups;
-        List<LessonDTO> lessons;
+        private List<GroupDTO> groups;
+        private List<LessonDTO> lessons;
 
-        UoWTimetable tt = new UoWTimetable();
+        private UoWTimetable tt = new UoWTimetable();
         
         public CoreTimetable()
         {

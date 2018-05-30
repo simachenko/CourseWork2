@@ -31,12 +31,12 @@ namespace TimetableWebApp.ModelMapper
             Mapper.Initialize(config => config.CreateMap<GroupViewModel, GroupDTO>());
             return Mapper.Map<GroupDTO>(groupViewModel);
         }
-        public static ICollection<GroupViewModel> GroupDomainToView(ICollection<GroupDTO> groupDTO)
+        public static IEnumerable<GroupViewModel> GroupDomainToView(IEnumerable<GroupDTO> groupDTO)
         {
             Mapper.Initialize(config => config.CreateMap<GroupDTO, GroupViewModel>());
             return Mapper.Map<List<GroupViewModel>>(groupDTO);
         }
-        public static ICollection<LessonViewModel> GroupDomainToView(ICollection<LessonDTO> lessonDTO)
+        public static IEnumerable<LessonViewModel> LessonDomainToView(IEnumerable<LessonDTO> lessonDTO)
         {
             Mapper.Initialize(config => config.CreateMap<LessonDTO, LessonViewModel>());
             return Mapper.Map<List<LessonViewModel>>(lessonDTO);

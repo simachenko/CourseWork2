@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Interfaces
 {
-    interface IManager
+    public interface IManager
     {
         List<LessonDTO> getLessonsByGroup(string group);
         List<LessonDTO> getLessonsByAuditory(double auditory);

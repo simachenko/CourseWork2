@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Interfaces
 {
-    interface IAdmin
+    public interface IAdmin
     {
         bool addNewUser(UserDTO user);
         bool removeUser(int id);

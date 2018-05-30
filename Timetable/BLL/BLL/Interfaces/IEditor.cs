@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Interfaces
 {
-    interface IEditor
+    public interface IEditor
     {
         void addNewGroup(GroupDTO group);
         bool removeGroup(string group);

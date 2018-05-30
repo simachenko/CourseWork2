@@ -10,7 +10,7 @@ using BLL.DTO;
 
 namespace BLL.Mappers
 {
-    public static class ModelMapper
+    static class ModelMapper
     {
         public static Group GroupMapper_toEntity(GroupDTO group)
         {
