@@ -4,6 +4,7 @@ using BLL.DTO;
 using System.Collections.Generic;
 using System.Diagnostics;
 using BLL.Core;
+using Ninject;
 
 namespace BLLTest
 {
@@ -13,10 +14,12 @@ namespace BLLTest
         List<LessonDTO> ldl;
         LessonDTO ld;
         CoreTimetable ct;
+        IKernel kern = new StandardKernel(new BLL.NinjectConfig.NinjectConfigurations());
         [TestInitialize]
         public void testInitialize()
         {
             Debug.WriteLine("Test initialize");
+            kern.Get<CoreTimetable>();
             ld = new LessonDTO();
             ld.auditory = 6.104;
             ld.day = 1;
@@ -25,7 +28,6 @@ namespace BLLTest
             ld.LessonId = 1;
             ld.teacher = "Valera";
 
-            ct = new CoreTimetable();
             ct.CreateLesson(ld);
             ldl.Add(ld);
         }

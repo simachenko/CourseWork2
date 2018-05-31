@@ -10,7 +10,7 @@ using DataAccessLayer.UsersDataStorage;
 
 namespace BLL.NinjectConfig
 {
-    class NinjectConfigurations : NinjectModule
+    public class NinjectConfigurations : NinjectModule
     {
         public override void Load()
         {

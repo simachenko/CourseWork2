@@ -9,7 +9,7 @@ using BLL.DTO;
 using Ninject;
 namespace BLL.Core
 {
-    class CoreTimetable
+    public class CoreTimetable
     {
         List<GroupDTO> groups;
         List<LessonDTO> lessons;

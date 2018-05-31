@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BLL.Core;
 using System.Diagnostics;
+using Ninject;
 
 namespace BLLTest
 {
@@ -16,7 +17,7 @@ namespace BLLTest
         List<GroupDTO> gdl;
         GroupDTO gd;
         CoreTimetable ct;
-
+        IKernel kern = new StandardKernel(new BLL.NinjectConfig.NinjectConfigurations());
         [TestInitialize]
         public void testInitialize()
         {
@@ -24,8 +25,9 @@ namespace BLLTest
             gd = new GroupDTO();
             gd.name = "219";
             gd.GroupId = 1;
+            kern.Get<CoreTimetable>();
 
-            ct = new CoreTimetable();
+            
             ct.CreateGroup(gd);
             gdl.Add(gd);
 

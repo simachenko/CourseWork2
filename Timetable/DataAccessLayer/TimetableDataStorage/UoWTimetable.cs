@@ -25,7 +25,7 @@ namespace DataAccessLayer.TimetableDataStorage
 
         public UoWTimetable()
         {
-            NinjectContext.SeUp(new NinjectConfigTT());
+            NinjectContext.SeUp(new NinjectConfigTest());
             dbTimetable = NinjectContext.Get<DbTimetable>();
         }
 

@@ -8,7 +8,7 @@ using DataAccessLayer.UsersDataStorage;
 using Ninject;
 namespace BLL.Core
 {
-    class CoreUser
+    public class CoreUser
     {
         List<UserDTO> users;
         [Inject]
