@@ -19,9 +19,6 @@ namespace BLL.Core
         public CoreTimetable(UoWTimetable table)
         {
             tt = table;
-            //MappConfig config =  new MappConfig();
-            // config.Initialize();
-            //MappConfig.Initialize();
 
             if (tt.GroupRepository.Get() == null)
                 groups = new List<GroupDTO>();

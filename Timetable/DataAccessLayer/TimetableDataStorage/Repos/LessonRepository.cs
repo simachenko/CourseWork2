@@ -19,6 +19,8 @@ namespace DataAccessLayer.TimetableDataStorage.Repos
         {
             this.DbTables = DbTables;
             //this.DbTables = NinjectKernel.NinjectContext.Get<DbTimetable>();
+            var ensureDLLIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
+
         }
         public void Create(Lesson item)
         {

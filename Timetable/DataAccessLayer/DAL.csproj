@@ -87,6 +87,7 @@
     <Compile Include="NinjectKernel\NinjectContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="TimetableDataStorage\NIjectConfig\NinjectConfigTest.cs" />
     <Compile Include="TimetableDataStorage\NIjectConfig\NinjectConfigTT.cs" />
     <Compile Include="TimetableDataStorage\Repos\DayRepository.cs" />
     <Compile Include="TimetableDataStorage\Repos\GroupRepository.cs" />
