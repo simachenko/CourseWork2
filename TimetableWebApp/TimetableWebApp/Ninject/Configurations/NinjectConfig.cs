@@ -13,10 +13,10 @@ namespace TimetableWebApp.Ninject.Configurations
         public override void Load()
         {
             Bind<IAdmin>().To<UserImplementation>();
-            Bind<IEditor>().To<UserImplementation>();
+            Bind<IEditor>().To<UserImplementation>().InSingletonScope();
             Bind<IManager>().To<UserImplementation>();
             Bind<ITeacher>().To<UserImplementation>();
-            Bind<IStudent>().To<UserImplementation>();
+            Bind<IStudent>().To<UserImplementation>().InSingletonScope();
 
         }
     }

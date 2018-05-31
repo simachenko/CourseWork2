@@ -20,6 +20,7 @@ namespace TimetableWebApp.Controllers
 
             Ninject.NinjectContext.SeUp(new Ninject.Configurations.NinjectConfig());
             editor = Ninject.NinjectContext.Get<IEditor>();
+            //ModelMapper.MapperConfigs.MapperConfig.Initialize();
         }
 
         // GET: api/Editor
@@ -54,16 +55,16 @@ namespace TimetableWebApp.Controllers
         // POST: api/Editor
         [HttpPost]
         [Route("api/Editor/CreateGroup/{name}")]
-        public HttpResponseMessage CreateGroup(string name)
+        public HttpResponseMessage CreateGroup([FromUri]string name)
         {
             GroupViewModel group = new GroupViewModel();
             group.name = name;
-            if (!Regex.IsMatch(group.name, @"^[\d|\D]{1,40}$"))
-                return Request.CreateResponse(HttpStatusCode.BadRequest, "Name is too long!");
-            if (group.name == null || group.name.Length == 0)
-                return Request.CreateResponse(HttpStatusCode.BadRequest, "Pelease insert group name");
-            if (!Regex.IsMatch(group.name, @"^\w{2}-\d{3}"))
-                return Request.CreateResponse(HttpStatusCode.BadRequest, "Pelease insert group name");
+            //if (!Regex.IsMatch(group.name, @"^[\d|\D]{1,40}$"))
+            //    return Request.CreateResponse(HttpStatusCode.BadRequest, "Name is too long!");
+            //if (group.name == null || group.name.Length == 0)
+            //    return Request.CreateResponse(HttpStatusCode.BadRequest, "Pelease insert group name");
+            //if (!Regex.IsMatch(group.name, @"^\w{2}-\d{3}"))
+            //    return Request.CreateResponse(HttpStatusCode.BadRequest, "Pelease insert group name");
             editor.addNewGroup(ModelMapper.ModelMap.GroupViewToDomain(group));
             return Request.CreateResponse(HttpStatusCode.Created);
         }

@@ -61,6 +61,8 @@ namespace BLL.Mappers
 
         public static List<GroupDTO> GroupCollectionMapper_toBLL(ICollection<Group> groups)
         {
+            Mapper.Reset();
+            Mapper.Initialize(cfg=>cfg.CreateMap<Group,GroupDTO>());
             return Mapper.Map<List<GroupDTO>>(groups);
         }
 
@@ -72,6 +74,8 @@ namespace BLL.Mappers
 
         public static List<UserDTO> UsersCollectionMapper_toBLL(ICollection<User> users)
         {
+            Mapper.Reset();
+            Mapper.Initialize(cfg => cfg.CreateMap<User, UserDTO>());
             return Mapper.Map<List<UserDTO>>(users);
         }
 

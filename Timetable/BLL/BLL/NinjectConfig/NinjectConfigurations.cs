@@ -16,7 +16,7 @@ namespace BLL.NinjectConfig
         {
             Bind<UoWTimetable>().To<UoWTimetable>();
             Bind<UoWUsers>().To<UoWUsers>();
-            Bind<Core.CoreTimetable>().To<Core.CoreTimetable>();
+            Bind<Core.CoreTimetable>().To<Core.CoreTimetable>().InSingletonScope();
             Bind<Core.CoreUser>().To<Core.CoreUser>();
         }
     }

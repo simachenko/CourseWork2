@@ -13,6 +13,7 @@ namespace TimetableWebApp.ModelMapper.MapperConfigs
         {
             Mapper.Initialize(config =>
             {
+                config = BLL.MappConfig.GetMapperConfiguration(config);
                 config.CreateMap<GroupDTO, GroupViewModel>();
                 config.CreateMap<LessonDTO, LessonViewModel>();
                 config.CreateMap<LessonViewModel, LessonDTO>();

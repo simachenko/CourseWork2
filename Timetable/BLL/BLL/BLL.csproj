@@ -61,6 +61,7 @@
     <Compile Include="Interfaces\IManager.cs" />
     <Compile Include="Interfaces\IStudent.cs" />
     <Compile Include="Interfaces\ITeacher.cs" />
+    <Compile Include="MappConfig.cs" />
     <Compile Include="Mappers\MapperConfigInitialize.cs" />
     <Compile Include="Mappers\ModelMapper.cs" />
     <Compile Include="NinjectConfig\NinjectConfigurations.cs" />
