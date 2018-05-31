@@ -15,7 +15,6 @@ namespace BLL.Users
 
         public UserImplementation()
         {
-            Mappers.MapperConfigInitialize.Initialize();
             NinjectContext.SeUp(new NinjectConfig.NinjectConfigurations());
             ct = NinjectContext.Get<CoreTimetable>();
             cu = NinjectContext.Get<CoreUser>();

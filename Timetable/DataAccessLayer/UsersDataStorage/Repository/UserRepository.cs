@@ -9,12 +9,13 @@ namespace DataAccessLayer.UsersDataStorage.Repository
 {
     class UserRepository : IRepository<User>
     {
-        private DbUsers dbUsers = NinjectKernel.NinjectContext.Get<DbUsers>();
-
-        /*public UserRepository(DbUsers dbUsers)
+        private DbUsers dbUsers;
+        public UserRepository(DbUsers dbUsers)
         {
             this.dbUsers = dbUsers;
-        }*/
+            var ensureDLLIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
+
+        }
 
         public void Create(User item)
         {

@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +6,7 @@ using System.Threading.Tasks;
 using DataAccessLayer.TimetableDataStorage;
 using BLL.DTO;
 using Ninject;
+using AutoMapper;
 namespace BLL.Core
 {
     public class CoreTimetable
@@ -19,6 +19,7 @@ namespace BLL.Core
         public CoreTimetable(UoWTimetable table)
         {
             tt = table;
+
             if (tt.GroupRepository.Get() == null)
                 groups = new List<GroupDTO>();
             else groups = Mappers.ModelMapper.GroupCollectionMapper_toBLL(tt.GroupRepository.Get());
@@ -26,6 +27,8 @@ namespace BLL.Core
             if (tt.LessonRepository.Get() == null)
                 lessons = new List<LessonDTO>();
             else lessons = Mappers.ModelMapper.LessonsCollectionMapper_toBLL(tt.LessonRepository.Get());
+            Mapper.Reset();
+
         }
 
         public void CreateGroup(GroupDTO group)
@@ -33,6 +36,7 @@ namespace BLL.Core
             groups.Add(group);
             tt.GroupRepository.Create(Mappers.ModelMapper.GroupMapper_toEntity(group));
             tt.Save();
+            AutoMapper.Mapper.Reset();
         }
 
         public bool DeleteGroup(string name)
